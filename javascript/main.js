@@ -74,7 +74,7 @@ $('body').click((e) => {
 $('.project-chops').hover(
     function() { 
         $('.project-chops').addClass('project-link')
-        $('#project-thumbnail').css('background-image', 'url("images/tn_chops.jpg")') 
+        $('#project-thumbnail').css('background-image', 'url("images/tn_chops.jpg")')
     },
     function() { 
         $('.project-chops').removeClass('project-link') 
@@ -131,3 +131,39 @@ $('.project-polyphonic').hover(
         $('#project-thumbnail').css('background-image', '') 
     }
 )
+
+// close project
+$('#dimmer').children('img').click((e) => {
+    $('#dimmer').css('opacity', '0')
+    $('#project-chops').css('opacity', '0')
+    // Add all the rest of the projects in here
+    setTimeout(() => {
+        $('#dimmer').css('display', 'none')
+        $('#project-chops').css('display', 'none')
+        // Add all the rest of the projects in here
+    }, 1000)
+})
+
+// open project
+$('.project-chops').click((e) => {
+    openDimmer();
+    openProject('chops');
+})
+
+
+
+
+// function bank
+function openDimmer() {
+    $('#dimmer').css('display', 'block')
+    setTimeout(() => {
+        $('#dimmer').css({'visibility': 'visible','opacity': '1'})
+    }, 100)
+}
+
+function openProject(project) {
+    $(`#project-${project}`).css('display', 'block')
+    setTimeout(() => {
+        $(`#project-${project}`).css({'visibility': 'visible','opacity': '1'})
+    }, 1000)
+}

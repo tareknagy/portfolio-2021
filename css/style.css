@@ -58,6 +58,29 @@ a {
     opacity: 20%;
 }
 
+#dimmer {
+    position: fixed;
+    display: none;
+    opacity: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    transition: visibility 0s, opacity 0.5s linear;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#dimmer > img {
+    position: fixed;
+    margin-top: 45px;
+    width: 20px;
+    top: 0;
+    right: 35px;
+}
+
+#dimmer > img:hover {
+    cursor: pointer;
+}
+
 #container {
     height: 100vh;
     display: flex;
@@ -223,6 +246,20 @@ a {
 .project-location {
     grid-column: 3 / 4;
     transition: 500ms;
+}
+
+#project-divs > * {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    /* left: 0; */
+    margin: 20px;
+    opacity: 0;
+    width: calc(100vw - 40px);
+    height: calc(100vh - 150px);
+    background-color: blueviolet;
+    z-index: 2;
+    transition: visibility 0s, opacity 0.5s linear;
 }
 
 #footer {
