@@ -1,3 +1,20 @@
+// Hide fade intro page on load
+$(document).ready(function() {
+    $('#cover').css({
+        'background-position': 'bottom',
+    })
+    setTimeout (() => {
+        $('#cover').css({
+            'opacity': '0%',
+            'transition': '1000ms'
+        })
+    }, 2500)
+    setTimeout (() => {
+        $('#cover').css({'display': 'none'})
+    }, 3500)
+});
+
+
 // thumbnails
 $('#project-thumbnail-container').css('width', $('#project-list').height()+'px');
 $('#project-thumbnail').css('width', $('#project-list').height()+'px');
@@ -35,8 +52,9 @@ $('body').click((e) => {
         $('#nav-menu').removeClass('nav-menu-open')
         $('#nav-menu').addClass('nav-menu-closed')
         $('#hamburger-menu').css('display', 'block')
-        $('#about').css('display', 'none')
-    }
+        $('#about').css({'visibility': 'hidden', 'opacity': '0'})
+        $('#nav-exit').css('display', 'none')
+    } 
     if($(e.target).parent().hasClass('nav-menu-closed')) {
         $('#nav-menu').addClass('nav-menu-open').css({
             left: $('#nav').width()-10,
@@ -45,7 +63,10 @@ $('body').click((e) => {
         })
         $('#nav-menu').removeClass('nav-menu-closed')
         $('#hamburger-menu').css('display', 'none')
-        $('#about').css('display', 'block')
+        setTimeout(() => {
+            $('#about').css({'visibility': 'visible','opacity': '1'})
+            $('#nav-exit').css('display', 'block')
+        }, 2500)
     }
 })
 
