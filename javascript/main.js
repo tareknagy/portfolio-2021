@@ -8,12 +8,12 @@ window.addEventListener('load', () => {
     introEl.style['background-position'] = 'bottom';
     setTimeout (() => {
         introEl.style.cssText += 'opacity: 0%; transition: 1000ms';
-    }, 1000);
-    // }, 2500);
+    // }, 1000);
+    }, 2500);
     setTimeout (() => {
         introEl.style.display = 'none';
-    }, 2000)
-    // }, 3500);
+    // }, 2000)
+    }, 3500);
     // Kick off interval for project scroll
     let currentProject = 0;
     highlightProject(projectList[currentProject]);
@@ -95,6 +95,9 @@ $('body').click((e) => {
     if($(e.target).is('.wordmark, .about-button')) {
             $('#about-section').css('display', 'block').removeClass('fade-out').addClass('fade-in')
     }
+
+    //AM I USING THIS ANYMORE?
+
 
     // menu open and close
     if(!$(e.target).hasClass('nav-menu-open')) {
