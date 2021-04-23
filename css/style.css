@@ -403,7 +403,7 @@ a {
     position: fixed;
     bottom: 0;
     right: 0;
-    margin: 10px;
+    padding: 10px;
     font-size: 8pt;
 }
 
@@ -421,6 +421,9 @@ a {
 }
 
 @media screen and (max-width: 800px) {
+    body {
+        overflow:hidden;
+    }
     #wordmark {
         margin-top: 10px;
     }
