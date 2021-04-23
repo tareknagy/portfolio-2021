@@ -119,7 +119,7 @@ a {
 
 .about-button {
     display: none;
-    margin: 20px;
+    margin-top: 20px;
     text-align: center;
     transition: ease 500ms;
 }
@@ -426,20 +426,21 @@ a {
 
 @media screen and (max-width: 800px) {
     body {
-        overflow: hidden;
+        overflow-y: hidden;
         position: relative;
     }
     #wordmark {
         margin-top: 10px;
     }
     #nav {
-        height: 20vh;
+        flex-grow: 0;
+        /* height: 20vh; */
     }
     #projects {
+        height: 70vh;
         flex-direction: column;
         /* top: 10px; */
         width: calc(100vw - 20px);
-        height: 70vh;
         border-top: none;
     }
     #project-thumbnail-container {
@@ -458,9 +459,9 @@ a {
         border-bottom: none;
         border-top: black solid 1px;
     }
-    #project-list {
+    /* #project-list {
         height: 30vh;
-    }
+    } */
     #footer {
         /* padding: 0 10px 0 0; */
         width: 100%;

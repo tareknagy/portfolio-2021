@@ -27,6 +27,9 @@ window.addEventListener('load', () => {
         }
         highlightProject(projectList[currentProject]);
     }, 2000);
+    setTimeout(function() {
+        window.scrollTo(0, 1);
+    }, 1000);
 });
 
 // Set thumbnail size
