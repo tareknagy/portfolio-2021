@@ -9,6 +9,7 @@ h1, h2, h3, h4, h5, h6 { /* reset */
 }
 
 body {
+    background-color: white;
     margin: 0px;
     font-family: Neue Machina;
 }
@@ -422,7 +423,8 @@ a {
 
 @media screen and (max-width: 800px) {
     body {
-        overflow:hidden;
+        overflow: hidden;
+        position: relative;
     }
     #wordmark {
         margin-top: 10px;

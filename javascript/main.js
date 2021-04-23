@@ -99,7 +99,7 @@ $('body').click((e) => {
         }, 500)
         $('#about-section').css('opacity', '0%')
     }
-    if($(e.target).hasClass('wordmark')) {
+    if($(e.target).is('.wordmark, .about-button')) {
         console.log('hi')
         $('#about-section').css('display', 'block')
         setTimeout(() => {
