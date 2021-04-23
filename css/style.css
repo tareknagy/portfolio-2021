@@ -9,7 +9,6 @@ h1, h2, h3, h4, h5, h6 { /* reset */
 }
 
 body {
-    /* background-color: #ffffff; */
     background-color: black;
     margin: 0px;
     font-family: Neue Machina;
@@ -63,26 +62,10 @@ a {
 #dimmer {
     position: fixed;
     display: none;
-    opacity: 0;
     height: 100vh;
     width: 100vw;
     z-index: 1;
-    transition: visibility 0s, opacity 0.5s linear;
     background: white;
-}
-
-/* TO BE REMOVED */
-#dimmer > img {
-    display: none;
-    position: fixed;
-    margin-top: 30px;
-    width: 20px;
-    top: 0;
-    right: 35px;
-}
-
-#dimmer > img:hover {
-    cursor: pointer;
 }
 
 #container {
@@ -97,10 +80,6 @@ a {
     margin: 10px;
     display: flex;
     position: relative;
-    /* height: 100%; */
-    /* display: flex; */
-    /* justify-content: space-between; */
-    /* align-content: center; */
 }
 
 #nav-mobile {
@@ -136,99 +115,9 @@ a {
     transition: ease 500ms;
 }
 
-.about-button:hover {
-    cursor: pointer;
-    color: blue;
-    transition: ease 500ms;
-}
-
-
-/* DITCH ALL THE MENU CODE HERE AND IN JS !!!!! */
-
-
-
-
-#nav-menu {
-    transition-timing-function: ease-out;
-    right: calc(50% - 30px);
-    top: 10px;
-    transform: translate(-100%, 0%);
-}
-
-.nav-menu-closed {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    margin-top: 10px;
-    border: solid;
-    border-width: min(.75vw, 4.5px);
-    border-radius: 2px;
-    padding: 3px;
-}
-
-.nav-menu-closed:hover {
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    transition: 500ms;
-}
-
-.nav-menu-open {
-    position: fixed;
-    /* width: max(40vw, 400px); */
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    margin-top: 30px;
-    height: calc(100vh - 60px);
-    border-width: min(.75vw, 4.5px);
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 3px;
-}
-
-.nav-menu-closed > img {
-    height: min(100%, 40px);
-    display: block;
-    margin: auto;
-    transition: 100ms;
-    opacity: 0%;
-}
-
-.nav-menu-closed:hover > img {
-    opacity: 100%;
-    transition: 2000ms;
-}
-
-#nav-exit {
-    display: none;
-    position: absolute;
-    margin-left: -40px;
-}
-
-#nav-exit > img {
-    width: 20px;
-}
-
-#nav-exit > img:hover {
-    cursor: pointer;
-}
-
-#about {
-    visibility: hidden;
-    opacity: 0;
-    height: 100%;
-    overflow: auto;
-    color: white;
-    font-size: min(3vw, 22pt);
-    padding: 10px;
-    transition: visibility 0s, opacity 0.5s linear;
-}
-
 #about-section {
     position: fixed;
     display: none;
-    opacity: 0%;
     justify-content: center;
     align-content: center;
     height: 100vh;
@@ -251,18 +140,10 @@ a {
     right: 30px;
     text-align: right;
     top: 30px;
-    /* height: 30px; */
-    transition: 500ms ease;
-}
-
-#about-exit:hover {
-    cursor: pointer;
-    color: blue;
     transition: 500ms ease;
 }
 
 #projects {
-    /* position: fixed; */
     display: flex;
     justify-content: space-between;
     bottom: 10px;
@@ -283,7 +164,6 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    /* z-index: -1; */
     z-index: 0;
     transition: 1000ms;
     background-repeat: no-repeat;
@@ -316,10 +196,6 @@ a {
     transition: 500ms;
 }
 
-.project-link:hover {
-    cursor: pointer;
-}
-
 .project-name {
     grid-column: 1 / 2;
     transition: 500ms;
@@ -339,46 +215,38 @@ a {
     display: none;
     position: fixed;
     overflow-x: scroll;
-    /* overflow-y: hidden; */
-    /* bottom: 0; */
-    /* left: 0; */
-    /* margin: 20px; */
     opacity: 0;
     width: calc(100vw -  150px);
     height: 100vh;
-    /* background-color: blueviolet; */
     z-index: 2;
     transition: visibility 0s, opacity 0.5s linear;
     scroll-behavior: smooth;
 }
 
 .project-img {
-    /* display: flex; */
     margin: 30px 0 30px 30px;
-    /* height: 100%; */
     width: calc(100vw -  185px);
-    /* bottom: 0; */
 }
 
 .project-buttons {
     position: fixed;
     height: 25px;
     bottom: 30px;
-    right: 35px;
-    z-index: 2;
+    right: 18px;
+    z-index: 3;
 }
 
 .project-buttons * {
     height: 25px;
-    margin-left: 20px;
+    padding: 12px 12px;
     transition: 500ms ease;
 }
 
-.project-buttons *:hover {
+/* .project-buttons *:hover {
     cursor: pointer;
     color: blue;
     transition: 500ms ease;
-}
+} */
 
 .info {
     position: fixed;
@@ -387,7 +255,7 @@ a {
     width: 100vw;
     left: 0;
     bottom: -100%;
-    padding: 10px;
+    padding: 20px;
     background-color: rgba(0, 0, 0, 0.9);
     color: white;
     transition: ease-in 1000ms;
@@ -398,24 +266,7 @@ a {
 }
 
 .info-exit {
-    margin-right: 20px;
     transition: 500ms ease;
-}
-
-.info-exit:hover {
-    cursor: pointer;
-    color: blue;
-    transition: 500ms ease;
-}
-
-.hover-right:hover {
-    cursor: url('../images/arrow-right.svg') 16 16, e-resize;
-    /* cursor: e-resize; */
-}
-
-.hover-left:hover {
-    cursor: url('../images/arrow-left.svg') 16 16, w-resize;
-    /* cursor: w-resize; */
 }
 
 #footer {
@@ -424,10 +275,6 @@ a {
     right: 0;
     padding: 10px;
     font-size: 8pt;
-}
-
-#footer > a:hover {
-    text-decoration: underline;
 }
 
 @media screen and (max-width: 950px) {
@@ -462,7 +309,6 @@ a {
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        /* top: 10px; */
         width: calc(100vw - 20px);
         border-top: none;
     }
@@ -483,11 +329,9 @@ a {
         border-top: black solid 1px;
     }
     #project-list {
-        /* height: 30vh; */
         width: 95vw;
     }
     #footer {
-        /* padding: 0 10px 0 0; */
         width: 100%;
         text-align: right;
         font-size: 6pt;
@@ -504,7 +348,80 @@ a {
         margin: 30px 0 10px 0;
         width: 100%
     }
-
+    
 }
 
+@media (hover: hover) {
+    .project-buttons *:hover {
+        cursor: pointer;
+        color: blue;
+        transition: 500ms ease;
+    }
+    #footer > a:hover {
+        cursor: pointer;
+        color: blue;
+        transition: 500ms ease;
+    }
+    .info-exit:hover {
+        cursor: pointer;
+        color: blue;
+        transition: 500ms ease;
+    }
+    .project-link:hover {
+        cursor: pointer;
+    }
+    .about-button:hover {
+        cursor: pointer;
+        color: blue;
+        transition: ease 500ms;
+    }
+    #about-exit:hover {
+        cursor: pointer;
+        color: blue;
+        transition: 500ms ease;
+    }
+}
 
+.fade-in {
+    -webkit-animation: fade-in 500ms ease-in-out;
+    animation: fade-in 500ms ease-in-out;
+}
+
+@-webkit-keyframes fade-in {
+    0%   { opacity: 0; }
+    100% { opacity: .9; }
+}
+@-moz-keyframes fade-in {
+    0%   { opacity: 0; }
+    100% { opacity: .9; }
+}
+@-o-keyframes fade-in {
+    0%   { opacity: 0; }
+    100% { opacity: .9; }
+}
+@keyframes fade-in {
+    0%   { opacity: 0; }
+    100% { opacity: .9; }
+}
+
+.fade-out {
+    -webkit-animation: fade-out 500ms ease-in-out;
+    animation: fade-out 500ms ease-in-out;
+}
+
+@-webkit-keyframes fade-out {
+    0% { opacity: .9; }
+    100%   { opacity: 0; }
+}
+@-moz-keyframes fade-out {
+    0% { opacity: .9; }
+    100%   { opacity: 0; }
+}
+@-o-keyframes fade-out {
+    0% { opacity: .9; }
+    100%   { opacity: 0; }
+}
+@keyframes fade-out {
+    0% { opacity: .9; }
+    100%   { opacity: 0; }
+}

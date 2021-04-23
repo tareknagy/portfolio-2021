@@ -70,3 +70,22 @@
 // )
 
 
+// // projects - open
+// $('.project-chops').click((e) => {
+//     openDimmer();
+//     openProject('chops');
+// })
+
+// projects - close
+// $('#dimmer').click((e) => {
+//     $('#dimmer').css('opacity', '0')
+//     $('#project-chops').css('opacity', '0')
+//     // Add all the rest of the projects in here
+//     setTimeout(() => {
+//         $('#dimmer').css('display', 'none')
+//         $('#project-chops').css('display', 'none')
+//         // Add all the rest of the projects in here
+//     }, 1000)
+// })
+
+

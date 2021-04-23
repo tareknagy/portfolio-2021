@@ -87,16 +87,13 @@ $('body').click((e) => {
 
     // about section
     if($(e.target).is('#about-exit')) {
+        $('#about-section').removeClass('fade-in').addClass('fade-out')
         setTimeout(() => {
             $('#about-section').css('display', 'none')
         }, 500)
-        $('#about-section').css('opacity', '0%')
     }
     if($(e.target).is('.wordmark, .about-button')) {
-        $('#about-section').css('display', 'block')
-        setTimeout(() => {
-            $('#about-section').css('opacity', '100%')
-        }, 1)
+            $('#about-section').css('display', 'block').removeClass('fade-out').addClass('fade-in')
     }
 
     // menu open and close
@@ -131,12 +128,12 @@ $('body').click((e) => {
 
     // projects - close
     if($(e.target).is('.project-exit, #dimmer')) {
-        $('#dimmer').css('opacity', '0')
+        $('#dimmer').removeClass('fade-in').addClass('fade-out').css('display', 'none')
         $('#project-chops').css('opacity', '0')
         $('.about-button').css('opacity', '1')
         // Add all the rest of the projects in here
         setTimeout(() => {
-            $('#dimmer').css('display', 'none')
+            // $('#dimmer').css('display', 'none')
             $('#project-chops').css('display', 'none')
             // Add all the rest of the projects in here
         }, 1000)
@@ -190,30 +187,12 @@ $('.project-polyphonic').hover(
     function() { unhighlightProject('polyphonic') }
 )
 
-// // projects - open
-// $('.project-chops').click((e) => {
-//     openDimmer();
-//     openProject('chops');
-// })
-
-// projects - close
-// $('#dimmer').click((e) => {
-//     $('#dimmer').css('opacity', '0')
-//     $('#project-chops').css('opacity', '0')
-//     // Add all the rest of the projects in here
-//     setTimeout(() => {
-//         $('#dimmer').css('display', 'none')
-//         $('#project-chops').css('display', 'none')
-//         // Add all the rest of the projects in here
-//     }, 1000)
-// })
-
 // function bank
 function openDimmer() {
-    $('#dimmer').css('display', 'block')
-    setTimeout(() => {
-        $('#dimmer').css({'visibility': 'visible','opacity': '80%'})
-    }, 100)
+    $('#dimmer').css('display', 'block').removeClass('fade-out').addClass('fade-in')
+    // setTimeout(() => {
+    //     $('#dimmer').css({'visibility': 'visible','opacity': '80%'})
+    // }, 100)
 }
 
 function openProject(project) {
