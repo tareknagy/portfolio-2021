@@ -437,8 +437,10 @@ a {
         /* height: 20vh; */
     }
     #projects {
-        height: 70vh;
+        height: 100%;
         flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
         /* top: 10px; */
         width: calc(100vw - 20px);
         border-top: none;
@@ -459,9 +461,10 @@ a {
         border-bottom: none;
         border-top: black solid 1px;
     }
-    /* #project-list {
+    #project-list {
         height: 30vh;
-    } */
+        width: 95vw;
+    }
     #footer {
         /* padding: 0 10px 0 0; */
         width: 100%;
