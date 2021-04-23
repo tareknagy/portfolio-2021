@@ -9,7 +9,8 @@ h1, h2, h3, h4, h5, h6 { /* reset */
 }
 
 body {
-    background-color: white;
+    /* background-color: #ffffff; */
+    background-color: black;
     margin: 0px;
     font-family: Neue Machina;
 }
@@ -83,6 +84,7 @@ a {
 }
 
 #container {
+    background-color: white;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -265,7 +267,8 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
+    /* z-index: -1; */
+    z-index: 0;
     transition: 1000ms;
     background-repeat: no-repeat;
     background-size: contain;
@@ -429,10 +432,14 @@ a {
     #wordmark {
         margin-top: 10px;
     }
+    #nav {
+        height: 20vh;
+    }
     #projects {
         flex-direction: column;
         /* top: 10px; */
         width: calc(100vw - 20px);
+        height: 70vh;
         border-top: none;
     }
     #project-thumbnail-container {
@@ -442,7 +449,9 @@ a {
         width: calc(min(100vw, 50vh) - 20px) !important;
     }
     #project-thumbnail {
-        width: 100% !important;
+        width: 90% !important;
+        margin-left: auto;
+        margin-right: auto;
         border-bottom: none;
     }
     #project-list > * {

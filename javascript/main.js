@@ -215,10 +215,10 @@ function openProject(project) {
 function highlightProject(project) {
     $('.project-link').removeClass('project-link')
     $(`.project-${project}`).addClass('project-link')
-    $('#project-thumbnail').css('background-image', `url("images/tn_${project}.jpg")`)
+    $('#project-thumbnail').css('background-image', `url("images/tn_${project}.jpg")`).addClass(`project-${project}`)
 }
 
 function unhighlightProject(project) {
     $(`.project-${project}`).removeClass('project-link')
-    $('#project-thumbnail').css('background-image', '') 
+    $('#project-thumbnail').css('background-image', '').removeClass(`project-${project}`)
 }
