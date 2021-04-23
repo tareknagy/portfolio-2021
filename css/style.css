@@ -47,7 +47,7 @@ a {
     align-content: center;
     height: 100vh;
     width: 100vw;
-    z-index: 1;
+    z-index: 5;
     transition: 2000ms ease-in-out;
     background: linear-gradient(to top, black 50%, #D8D8D8 50%);
     background-size: 100% 200%;
@@ -71,7 +71,9 @@ a {
     background: white;
 }
 
+/* TO BE REMOVED */
 #dimmer > img {
+    display: none;
     position: fixed;
     margin-top: 30px;
     width: 20px;
@@ -99,6 +101,16 @@ a {
     /* display: flex; */
     /* justify-content: space-between; */
     /* align-content: center; */
+}
+
+#nav-mobile {
+    margin-top: 10px;
+    width: 90%;
+    align-content: center;
+    display: flex;
+    left: 50%;
+    transform: translate(-50%, 0);
+    visibility: hidden;
 }
 
 #wordmark {
@@ -221,7 +233,7 @@ a {
     align-content: center;
     height: 100vh;
     width: 100vw;
-    z-index: 1;
+    z-index: 3;
     padding: 30px;
     font-size: max(2vw, 16pt);
     overflow: scroll;
@@ -229,20 +241,24 @@ a {
     background-color: white;
 }
 
-#about-section > div {
+#about-section-copy {
     left: 0;
     width: max(40vw, 300px);
 }
 
-#about-section > img {
+#about-exit {
     position: fixed;
     right: 30px;
+    text-align: right;
     top: 30px;
-    width: 30px;
+    /* height: 30px; */
+    transition: 500ms ease;
 }
 
-#about-section > img:hover {
+#about-exit:hover {
     cursor: pointer;
+    color: blue;
+    transition: 500ms ease;
 }
 
 #projects {
@@ -282,7 +298,6 @@ a {
     overflow: auto;
     align-content: start;
     align-items: center;
-    margin-left: 10px;
     margin-bottom: 10px;
     flex-grow: 100;
 }
@@ -337,7 +352,7 @@ a {
     scroll-behavior: smooth;
 }
 
-#project-divs img {
+.project-img {
     /* display: flex; */
     margin: 30px 0 30px 30px;
     /* height: 100%; */
@@ -345,52 +360,52 @@ a {
     /* bottom: 0; */
 }
 
-.info {
+.project-buttons {
     position: fixed;
-    height: 21px;
-    width: 35px;
-    top: 0;
-    right: 85px;
-    margin-top: 30px;
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    border-radius: 2px;
-    transition: ease 1500ms;
-    font-size: 9pt;
+    height: 25px;
+    bottom: 30px;
+    right: 35px;
+    z-index: 2;
 }
 
-.info-open {
-    width: max(40vw, 300px);
-    height: calc(50vh - 60px);
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 3px;
+.project-buttons * {
+    height: 25px;
+    margin-left: 20px;
+    transition: 500ms ease;
 }
 
-.info-heading{
-    opacity: 1;
-    transition: 500ms;
-}
-
-.info-heading:hover {
+.project-buttons *:hover {
     cursor: pointer;
     color: blue;
-    transition: ease 500ms;
+    transition: 500ms ease;
 }
 
-.info-content-hidden {
-    display: none;
-    opacity: 0;
-    transition: ease 1000ms;
-}
-
-.info-content-visible {
+.info {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    left: 0;
+    bottom: -100%;
     padding: 10px;
-    font-size: 10pt;
-    display: block;
-    opacity: 0;
-    overflow: auto;
-    transition: ease 1000ms;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    transition: ease-in 1000ms;
+}
+
+.info-content {
+    width: max(50vw, 300px);
+}
+
+.info-exit {
+    margin-right: 20px;
+    transition: 500ms ease;
+}
+
+.info-exit:hover {
+    cursor: pointer;
+    color: blue;
+    transition: 500ms ease;
 }
 
 .hover-right:hover {
@@ -434,7 +449,13 @@ a {
     }
     #nav {
         flex-grow: 0;
-        /* height: 20vh; */
+        visibility: hidden;
+    }
+    #nav-mobile {
+        flex-grow: 0;
+        visibility: visible;
+        position: fixed;
+        z-index: 2;
     }
     #projects {
         height: 100%;
@@ -462,7 +483,7 @@ a {
         border-top: black solid 1px;
     }
     #project-list {
-        height: 30vh;
+        /* height: 30vh; */
         width: 95vw;
     }
     #footer {
@@ -474,6 +495,14 @@ a {
     }
     .about-button {
         display: block;
+    }
+    #project-divs > * {
+        width: calc(100vw - 20px);
+        margin: 10px;
+    }
+    .project-img {
+        margin: 30px 0 10px 0;
+        width: 100%
     }
 
 }

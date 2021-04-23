@@ -78,32 +78,21 @@ $('#nav').on('mousemove', (event) => {
 // click events
 $('body').click((e) => {
     // project info
-    if(!$(e.target).hasClass('info-open')) {
-        $('.info-content-hidden').css('opacity', '0')
-        $('.info-open').removeClass('info-open')
-        $('.info-content').removeClass('info-content-visible')
-        $('.info-content').addClass('info-content-hidden')
-        $('.info-heading').css('opacity', '1')
+    if($(e.target).hasClass('info-exit')) {
+        $(e.target).parent().css('bottom', '-100%')
     }
-    if ($(e.target).parent().hasClass('info')) {
-        $(e.target).css('opacity', '0')
-        $(e.target).parent().addClass('info-open')
-        $('.info-content').removeClass('info-content-hidden')
-        $('.info-content').addClass('info-content-visible')
-        setTimeout(() => {
-            $('.info-content-visible').css('opacity', '1')
-        }, 1500)
+    if ($(e.target).hasClass('project-info')) {
+        $(e.target).parent().siblings('.info').css('bottom', '0')
     }
 
     // about section
-    if($(e.target).hasClass('about-img')) {
+    if($(e.target).is('#about-exit')) {
         setTimeout(() => {
             $('#about-section').css('display', 'none')
         }, 500)
         $('#about-section').css('opacity', '0%')
     }
     if($(e.target).is('.wordmark, .about-button')) {
-        console.log('hi')
         $('#about-section').css('display', 'block')
         setTimeout(() => {
             $('#about-section').css('opacity', '100%')
@@ -132,6 +121,25 @@ $('body').click((e) => {
             $('#about').css({'visibility': 'visible','opacity': '1'})
             $('#nav-exit').css('display', 'block')
         }, 1800)
+    }
+
+    // projects - open
+    if($(e.target).hasClass('project-chops')) {
+        openDimmer();
+        openProject('chops');
+    }
+
+    // projects - close
+    if($(e.target).is('.project-exit, #dimmer')) {
+        $('#dimmer').css('opacity', '0')
+        $('#project-chops').css('opacity', '0')
+        $('.about-button').css('opacity', '1')
+        // Add all the rest of the projects in here
+        setTimeout(() => {
+            $('#dimmer').css('display', 'none')
+            $('#project-chops').css('display', 'none')
+            // Add all the rest of the projects in here
+        }, 1000)
     }
 })
 
@@ -182,23 +190,23 @@ $('.project-polyphonic').hover(
     function() { unhighlightProject('polyphonic') }
 )
 
-// projects - open
-$('.project-chops').click((e) => {
-    openDimmer();
-    openProject('chops');
-})
+// // projects - open
+// $('.project-chops').click((e) => {
+//     openDimmer();
+//     openProject('chops');
+// })
 
 // projects - close
-$('#dimmer').click((e) => {
-    $('#dimmer').css('opacity', '0')
-    $('#project-chops').css('opacity', '0')
-    // Add all the rest of the projects in here
-    setTimeout(() => {
-        $('#dimmer').css('display', 'none')
-        $('#project-chops').css('display', 'none')
-        // Add all the rest of the projects in here
-    }, 1000)
-})
+// $('#dimmer').click((e) => {
+//     $('#dimmer').css('opacity', '0')
+//     $('#project-chops').css('opacity', '0')
+//     // Add all the rest of the projects in here
+//     setTimeout(() => {
+//         $('#dimmer').css('display', 'none')
+//         $('#project-chops').css('display', 'none')
+//         // Add all the rest of the projects in here
+//     }, 1000)
+// })
 
 // function bank
 function openDimmer() {
@@ -212,6 +220,7 @@ function openProject(project) {
     $(`#project-${project}`).css('display', 'inline-block')
     setTimeout(() => {
         $(`#project-${project}`).css({'visibility': 'visible','opacity': '1'})
+        $('.about-button').css('opacity', '0')
     }, 1000)
 }
 
