@@ -10,7 +10,6 @@ events.forEach(event => dropContainerEl.addEventListener(event, e => {
         e.clientX = e.touches[0].clientX;
         e.clientY = e.touches[0].clientY;
     }
-    console.log(e.clientX);
     if (!lastCursorPosition.x) {
         lastCursorPosition.x = e.clientX
         lastCursorPosition.y = e.clientY
