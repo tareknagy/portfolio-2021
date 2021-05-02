@@ -1,0 +1,64 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Neue Machina;
+}
+
+h1, h2, h3, h4, h5, h6 { /* reset */
+    font-weight: normal;
+    font-family: Neue Machina;
+}
+
+body {
+    background-color: white;
+    margin: 0px;
+    font-family: Neue Machina;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+    text-transform: none;
+}
+
+a:hover {
+    color: black;
+    transition: 500ms;
+}
+
+@font-face {
+    font-family: 'Neue Machina';
+    font-style: normal;
+    font-weight: normal;
+    src:    url("fonts/NeueMachina-Regular.otf") format("opentype"),
+            url("fonts/NeueMachina-Regular.woff") format("woff"),
+            url("fonts/NeueMachina-Regular.woff2") format("woff2"),
+            url("fonts/NeueMachina-Regular.eot") format("embedded-opentype");
+}
+
+@font-face {
+    font-family: 'Neue Machina';
+    font-weight: bold;
+    src:    url("fonts/NeueMachina-Black.otf") format("opentype"),
+            url("fonts/NeueMachina-Black.woff") format("woff"),
+            url("fonts/NeueMachina-Black.woff2") format("woff2"),
+            url("fonts/NeueMachina-Black.eot") format("embedded-opentype");
+}
+
+#links {
+    position: fixed;
+    padding-top: 15px;
+    left: 20px;
+    bottom: 20px;
+}
+
+#drop-container {
+ position: fixed;
+ width: 100vw;
+ height: 100vh;
+}
+
+.dropped-word {
+    position: fixed;
+    top: 200px;
+    cursor: default;
+}
