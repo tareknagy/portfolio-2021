@@ -1,15 +1,16 @@
 const dropContainerEl = document.getElementById('drop-container');
 
+const events = ['mousemove', 'touchmove'];
 const dropWords = ['very', 'very', 'very', 'soon'];
 let currentWord = 0;
 let lastCursorPosition = {};
 
-// on mouse movement x or y greater than 100px (or maybe whenever curzor reaches a x or y that's % by something?)
-// create div fixed in position with current word as innerHTML
-// if  currentWord >= dropWords.length -  1, then currentWord  = 0, else, currentWord++
-// push current cursor position to lastCursorPosition
-
-dropContainerEl.addEventListener('mousemove', e=> {
+events.forEach(event => dropContainerEl.addEventListener(event, e => { 
+    if (e.touches) {
+        e.clientX = e.touches[0].clientX;
+        e.clientY = e.touches[0].clientY;
+    }
+    console.log(e.clientX);
     if (!lastCursorPosition.x) {
         lastCursorPosition.x = e.clientX
         lastCursorPosition.y = e.clientY
@@ -29,15 +30,7 @@ dropContainerEl.addEventListener('mousemove', e=> {
             currentWord++;
         }
     }
-});
-
-dropContainerEl.addEventListener('touchmove', e=> {
-    console.log('hi');
-})
-
-
-
-
+}));
 
 function diff(a, b) {
     if (a > b) {
