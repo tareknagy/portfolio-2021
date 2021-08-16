@@ -25,7 +25,7 @@ body {
     background: url('../images/background-noise.png');
     background-color: rgba(0, 0, 0, 0.1);
     animation: .2s infinite noise;
-    /* pointer-events: none; */
+    overflow: hidden;
 }
 
 a {

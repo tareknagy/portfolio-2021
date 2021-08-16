@@ -27,8 +27,8 @@ document.addEventListener('click', e => {
     }
 })
 
-// document.addEventListener('mousewheel', scrollY);
-// document.addEventListener('DOMMouseScroll', scrollY);
+document.addEventListener('mousewheel', scrollY);
+document.addEventListener('DOMMouseScroll', scrollY);
 
 function updateSlider() {
     let rangeLogoCalc = rangeEl.value / 100 * 540
@@ -45,11 +45,13 @@ function updateSlider() {
     }  
 }
 
-// function scrollY(e) {
-//     e = window.event || e;
-//     let delta = e.detail || e.deltaY || e.deltaX;
-//     console.log(delta)
-//     // console.log(document.scrollingElement.scrollLeft)
-//     // document.scrollingElement.scrollLeft += delta
-// }
+function scrollY(e) {
+    e = window.event || e;
+    let delta = e.detail || e.deltaY || e.deltaX;
+    if (delta > 0) {
+        document.scrollingElement.scrollLeft += 800
+    } else {
+        document.scrollingElement.scrollLeft -= 800
+    }
+}
 
