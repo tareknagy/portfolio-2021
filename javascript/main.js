@@ -1,5 +1,5 @@
 // let navAnimationInterval
-let projectList =  ['chops', 'gertrude', 'free', 'return', 'no', 'polyphonic'];
+let projectList =  ['chops', 'gertrude', 'polyphonic', 'no', 'free', 'return'];
 let projectAnimationInterval;
 
 // // Hide fade intro page on load
@@ -128,16 +128,46 @@ $('body').click((e) => {
         openDimmer();
         openProject('chops');
     }
+    if($(e.target).hasClass('project-gertrude')) {
+        openDimmer();
+        openProject('gertrude');
+    }
+    if($(e.target).hasClass('project-free')) {
+        openDimmer();
+        openProject('free');
+    }
+    if($(e.target).hasClass('project-return')) {
+        openDimmer();
+        openProject('return');
+    }
+    if($(e.target).hasClass('project-no')) {
+        openDimmer();
+        openProject('no');
+    }
+    if($(e.target).hasClass('project-polyphonic')) {
+        openDimmer();
+        openProject('polyphonic');
+    }
 
     // projects - close
     if($(e.target).is('.project-exit, #dimmer')) {
         $('#dimmer').removeClass('fade-in').addClass('fade-out').css('display', 'none')
         $('#project-chops').css('opacity', '0')
+        $('#project-gertrude').css('opacity', '0')
+        $('#project-free').css('opacity', '0')
+        $('#project-return').css('opacity', '0')
+        $('#project-no').css('opacity', '0')
+        $('#project-polyphonic').css('opacity', '0')
         $('.about-button').css('opacity', '1')
         // Add all the rest of the projects in here
         setTimeout(() => {
             // $('#dimmer').css('display', 'none')
             $('#project-chops').css('display', 'none')
+            $('#project-gertrude').css('display', 'none')
+            $('#project-free').css('display', 'none')
+            $('#project-return').css('display', 'none')
+            $('#project-no').css('display', 'none')
+            $('#project-polyphonic').css('display', 'none')
             // Add all the rest of the projects in here
         }, 1000)
     }

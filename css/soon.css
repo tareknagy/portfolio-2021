@@ -46,9 +46,11 @@ a:hover {
 
 #links {
     position: fixed;
-    padding-top: 15px;
-    left: 20px;
-    bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 20px;
+    bottom: 0;
 }
 
 #drop-container {
@@ -61,4 +63,15 @@ a:hover {
     position: fixed;
     top: 200px;
     cursor: default;
+}
+
+
+@media screen and (max-width: 600px) {
+    #links {
+        flex-direction: column;
+    }
+
+    #links * {
+        padding-top: 10px;
+    }
 }
